@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-slate-700;
+  }
+}
+
+/* Markdown content inside assistant messages */
+.md {
+  @apply leading-relaxed;
+}
+.md h1, .md h2, .md h3 {
+  @apply mb-2 mt-4 font-bold;
+}
+.md p {
+  @apply mb-3;
+}
+.md ul, .md ol {
+  @apply mb-3 ml-5 space-y-1;
+}
+.md ul { list-style: disc; }
+.md ol { list-style: decimal; }
+.md code {
+  @apply rounded bg-slate-800 px-1.5 py-0.5 font-mono text-[13px] text-emerald-300;
+}
+.md pre {
+  @apply mb-3 overflow-x-auto rounded-xl bg-slate-900 p-4 text-[13px];
+}
+.md pre code {
+  @apply bg-transparent p-0 text-slate-200;
+}
+.md a {
+  @apply text-sky-400 underline;
+}
+.md blockquote {
+  @apply border-l-4 border-slate-600 pl-3 text-slate-300;
+}
+.md table {
+  @apply mb-3 w-full border-collapse text-sm;
+}
+.md th, .md td {
+  @apply border border-slate-700 px-2.5 py-1.5 text-left;
+}
